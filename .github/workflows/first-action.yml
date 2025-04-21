@@ -1,0 +1,13 @@
+name: Mon Premier Workflow # Nom du workflow
+
+on:
+  push: # Le workflow s'exécute à chaque push
+  pull_request: # S'exécute aussi lors d'une pull request
+jobs:
+  build:
+    runs-on: ubuntu-latest # Exécuter le job sur Ubuntu
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3 # Récupérer le code du repo
+      - name: Afficher un message
+        run: echo "Hello GitHub Actions !"
